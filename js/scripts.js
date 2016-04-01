@@ -2,21 +2,20 @@ $(function(event){
 	$("#submit").click(function(event){
 		event.preventDefault();
 		var sentance = $("#sentance").val();
-		var array;
-
-		var arrayS = sentance.split("");
-		var arrayOfVowels = ["a", "i", "e", "o", "u", "y"];
-
-		for (var i = 0; i < arrayS.length; i++){
-			for (var x = 0; x < arrayOfVowels.length; x++){
-				if(arrayS[i] === arrayOfVowels[x]){
-					arrayS[i] = "-";
-				}
-			}
+		var num = parseInt(sentance);
+		if(num%3===0 && num%5!=0){
+			output="ping";
 		}
-		var str = arrayS.join("");
+		else if(num%5===0 && num%3!=0){
+			output="pong";
+		}
+		else if(num%5===0 && num%3===0){
+			output="pingpong";
+		}
+		else{
+			output= sentance.toString();
+		}
+		var str = output;
 		$("#list").prepend("<li>"+str+"</li>");
 		});
-		
-
 });
