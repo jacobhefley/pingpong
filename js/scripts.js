@@ -3,7 +3,13 @@ $(function(event){
 		event.preventDefault();
 		var sentance = $("#sentance").val();
 		var num = parseInt(sentance);
-		for(i=1; i<num+1; i++){
+		interate(num);
+	});
+});
+
+function interate(input){
+		var ouput = "";
+		for(i=1; i<input+1; i++){
 			if(i%3===0 && i%5!=0){
 				output="ping";
 			}
@@ -18,6 +24,5 @@ $(function(event){
 			}
 			var str = output;
 			$("#list").append("<li>"+str+"</li>");
-		}
-	});
-});
+	};
+};
