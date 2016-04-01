@@ -16,6 +16,6 @@ $(function(event){
 			output= sentance.toString();
 		}
 		var str = output;
-		$("#list").prepend("<li>"+str+"</li>");
+		$("#list").append("<li>"+str+"</li>");
 		});
 });
